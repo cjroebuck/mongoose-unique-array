@@ -115,6 +115,7 @@ module.exports = function(schema) {
 
 function has$push(dirt) {
   return dirt.value != null &&
+    dirt.value.$atomics &&
     dirt.value.$atomics() != null &&
     '$push' in dirt.value.$atomics();
 }
